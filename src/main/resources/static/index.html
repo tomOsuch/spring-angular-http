@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Produkt manager</title>
+</head>
+<body ng-controller="ProductController as prodControl">
+    <h1>{{prodControl.appName}}</h1>
+    <form>
+        <input type="text" ng-model="prodControl.product.name" placeholder="name"><br>
+        <input type="text" ng-model="prodControl.product.producer" placeholder="Producer"><br>
+        <input type="text" ng-model="prodControl.product.kcal" placeholder="kcal"
+        <button ng-click="prodControl.addProduct(prodControl.product)" >Dodaj</button>
+    </form>
+
+    <ul>
+        <li ng-repeat="prod in prodControl.product">
+            {{prod.name}} - {{prod.producer}} ({{prod.kcal}} kcal)
+        </li>
+    </ul>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
